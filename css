@@ -1,0 +1,122 @@
+/* Основные настройки страницы */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+/* Шапка */
+
+header {
+    width: 100%;
+    background-color: black;
+    min-height: 100px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+
+/* Логотип */
+
+.logo {
+    width: 95px;
+    height: 95px;
+    margin-left: 20px;
+
+    border: 1px solid black;
+    border-radius: 50%;
+
+    overflow: hidden;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* Название сайта */
+
+.site-name {
+    margin-left: 25px;
+    font-size: 18px;
+}
+
+
+/* Меню */
+
+nav {
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+
+/* Основное содержимое */
+
+main {
+    max-width: 960px;
+    margin: 30px auto;
+}
+
+
+/* Заголовки разделов */
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+
+/* Таблица */
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+
+th,
+td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+
+th {
+    background-color: black;
+    color: white;
+}
+
+
+/* Форма */
+
+input,
+textarea,
+select {
+    margin-top: 5px;
+}
+
+
+/* Подвал */
+
+footer {
+    width: 100%;
+    color: white;
+    min-height: 60px;
+    background-color: black;
+}
