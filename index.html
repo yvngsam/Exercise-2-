@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой сайт</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .field-error {
+            display: block;
+            margin-top: 5px;
+            color: #c62828;
+            font-size: 14px;
+        }
+
+        input[aria-invalid="true"] {
+            border: 1px solid #c62828;
+        }
+
+        #success-message {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Шапка сайта -->
+    <header>
+        <div class="header-content">
+
+            <div class="logo">
+                <img src="logo.jpg" alt="Логотип">
+            </div>
+
+            <div class="site-name">
+                Название сайта
+            </div>
+
+        </div>
+
+        <!-- Меню -->
+        <nav>
+            <a href="#table">Ссылка 1</a>
+            <a href="#links">Ссылка 2</a>
+            <a href="#form">Ссылка 3</a>
+        </nav>
+    </header>
+
+    <!-- Основное содержимое -->
+    <main>
+
+        <!-- Таблица -->
+        <section id="table">
+            <h2>Таблица</h2>
+
+            <table>
+                <tr>
+                    <th>Название 1</th>
+                    <th>Название 2</th>
+                    <th>Название 3</th>
+                    <th>Название 4</th>
+                </tr>
+
+                <tr>
+                    <td>Ячейка 1</td>
+                    <td>Ячейка 2</td>
+                    <td>Ячейка 3</td>
+                    <td>Ячейка 4</td>
+                </tr>
+
+                <tr>
+                    <td>Ячейка 5</td>
+                    <td colspan="2">Объединённые ячейки</td>
+                    <td>Ячейка 8</td>
+                </tr>
+
+                <tr>
+                    <td>Ячейка 9</td>
+                    <td>Ячейка 10</td>
+                    <td>Ячейка 11</td>
+                    <td>Ячейка 12</td>
+                </tr>
+
+                <tr>
+                    <td rowspan="2">Объединённые строки</td>
+                    <td>Ячейка 14</td>
+                    <td>Ячейка 15</td>
+                    <td>Ячейка 16</td>
+                </tr>
+
+                <tr>
+                    <td>Ячейка 18</td>
+                    <td>Ячейка 19</td>
+                    <td>Ячейка 20</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Список гиперссылок -->
+        <section id="links">
+            <h2>Список гиперссылок</h2>
+
+            <ul>
+                <li>
+                    <a href="https://www.google.com/">Google</a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/">YouTube</a>
+                </li>
+                <li>
+                    <a href="https://github.com/">GitHub</a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Форма -->
+        <section id="form">
+            <h2>Форма</h2>
+
+            <form id="user-form" novalidate>
+
+                <p>
+                    <label for="fullname">ФИО:</label>
+
+                    <input
+                        type="text"
+                        id="fullname"
+                        name="fullname"
+                        autocomplete="name"
+                        required
+                        pattern="[А-Яа-яЁёA-Za-z]+([ -][А-Яа-яЁёA-Za-z]+)*"
+                        title="Введите ФИО только буквами. Разрешены пробелы и дефис, цифры запрещены."
+                        aria-describedby="fullname-error">
+
+                    <span
+                        id="fullname-error"
+                        class="field-error"
+                        role="alert">
+                    </span>
+                </p>
+
+                <p>
+                    <label for="phone">Телефон:</label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        pattern="[0-9]+"
+                        inputmode="numeric"
+                        title="Телефон должен содержать только цифры."
+                        required>
+                </p>
+
+                <p>
+                    <label for="email">E-mail:</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required>
+                </p>
+
+                <p>
+                    <label for="birthdate">Дата рождения:</label>
+
+                    <input
+                        type="date"
+                        id="birthdate"
+                        name="birthdate"
+                        max="2026-12-31"
+                        required>
+                </p>
+
+                <fieldset>
+                    <legend>Пол:</legend>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="gender"
+                            value="male"
+                            required>
+                        Мужской
+                    </label>
+
+                    <br>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="gender"
+                            value="female">
+                        Женский
+                    </label>
+                </fieldset>
+
+                <p>
+                    <label for="language">
+                        Любимый язык программирования:
+                    </label>
+
+                    <br>
+
+                    <select
+                        id="language"
+                        name="language"
+                        multiple
+                        size="5"
+                        required
+                        title="Выберите хотя бы один язык программирования.">
+
+                        <option value="Pascal">Pascal</option>
+                        <option value="C">C</option>
+                        <option value="C++">C++</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="PHP">PHP</option>
+                        <option value="Python">Python</option>
+                        <option value="Java">Java</option>
+                        <option value="Haskel">Haskel</option>
+                        <option value="Clojure">Clojure</option>
+                        <option value="Prolog">Prolog</option>
+                        <option value="Scala">Scala</option>
+
+                    </select>
+                </p>
+
+                <p>
+                    <label for="biography">Биография:</label>
+
+                    <br>
+
+                    <textarea
+                        id="biography"
+                        name="biography"
+                        rows="5"
+                        cols="40"></textarea>
+                </p>
+
+                <p>
+                    <input
+                        type="checkbox"
+                        id="contract"
+                        name="contract"
+                        required>
+
+                    <label for="contract">
+                        С контрактом ознакомлен(а)
+                    </label>
+                </p>
+
+                <p>
+                    <input type="submit" value="Сохранить">
+                </p>
+
+                <p
+                    id="success-message"
+                    role="status"
+                    aria-live="polite"
+                    hidden>
+                    Форма успешно заполнена!
+                </p>
+
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer>
+        (c) Семён Сергеевич Нехаев
+    </footer>
+
+
+
+    <script>
+        "use strict";
+
+        const form = document.getElementById("user-form");
+        const fullname = document.getElementById("fullname");
+        const fullnameError = document.getElementById("fullname-error");
+        const phone = document.getElementById("phone");
+        const birthdate = document.getElementById("birthdate");
+        const language = document.getElementById("language");
+        const successMessage = document.getElementById("success-message");
+
+        const maxBirthdate = "2026-12-31";
+
+        const fioPattern =
+            /^[А-Яа-яЁёA-Za-z]+([ -][А-Яа-яЁёA-Za-z]+)*$/;
+
+        birthdate.max = maxBirthdate;
+
+        // Скрытие сообщения об успехе
+        function hideSuccessMessage() {
+            successMessage.hidden = true;
+        }
+
+        // Проверка ФИО
+        function validateFullname() {
+            const value = fullname.value.trim();
+
+            if (value === "") {
+                fullname.setCustomValidity("Введите ФИО.");
+                fullnameError.textContent = "";
+                fullname.removeAttribute("aria-invalid");
+                return false;
+            }
+
+            if (!fioPattern.test(value)) {
+                const errorText =
+                    "ФИО: только буквы, пробелы и дефисы. Цифры и другие символы запрещены.";
+
+                fullname.setCustomValidity(errorText);
+                fullnameError.textContent = errorText;
+                fullname.setAttribute("aria-invalid", "true");
+
+                return false;
+            }
+
+            fullname.setCustomValidity("");
+            fullnameError.textContent = "";
+            fullname.removeAttribute("aria-invalid");
+
+            return true;
+        }
+
+        // Предупреждение появляется сразу при вводе или вставке цифр
+        fullname.addEventListener("input", function () {
+            validateFullname();
+            hideSuccessMessage();
+        });
+
+        // Проверка телефона
+        phone.addEventListener("input", function () {
+            phone.setCustomValidity("");
+
+            if (phone.value !== "" && !/^[0-9]+$/.test(phone.value)) {
+                phone.setCustomValidity(
+                    "Телефон должен содержать только цифры."
+                );
+            }
+
+            hideSuccessMessage();
+        });
+
+        // Проверка даты
+        birthdate.addEventListener("change", function () {
+            birthdate.setCustomValidity("");
+
+            if (
+                birthdate.value !== "" &&
+                birthdate.value > maxBirthdate
+            ) {
+                birthdate.setCustomValidity(
+                    "Дата рождения не может быть позже 31.12.2026."
+                );
+            }
+
+            hideSuccessMessage();
+        });
+
+        // Проверка выбора языка
+        language.addEventListener("change", function () {
+            language.setCustomValidity("");
+
+            if (language.selectedOptions.length === 0) {
+                language.setCustomValidity(
+                    "Выберите хотя бы один язык программирования."
+                );
+            }
+
+            hideSuccessMessage();
+        });
+
+        // Скрытие сообщения при изменении остальных полей
+        form.addEventListener("input", function () {
+            hideSuccessMessage();
+        });
+
+        form.addEventListener("change", function () {
+            hideSuccessMessage();
+        });
+
+        // Проверка формы без отправки на сервер
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            hideSuccessMessage();
+
+            // ФИО
+            if (!validateFullname()) {
+                fullname.reportValidity();
+                fullname.focus();
+                return;
+            }
+
+            // Телефон
+            phone.setCustomValidity("");
+
+            if (!/^[0-9]+$/.test(phone.value.trim())) {
+                phone.setCustomValidity(
+                    "Телефон должен содержать только цифры."
+                );
+
+                phone.reportValidity();
+                phone.focus();
+                return;
+            }
+
+            // Дата рождения
+            birthdate.setCustomValidity("");
+
+            if (
+                birthdate.value === "" ||
+                birthdate.value > maxBirthdate
+            ) {
+                birthdate.setCustomValidity(
+                    "Укажите дату рождения не позже 31.12.2026."
+                );
+
+                birthdate.reportValidity();
+                birthdate.focus();
+                return;
+            }
+
+            // Проверка выбора хотя бы одного языка
+            language.setCustomValidity("");
+
+            if (language.selectedOptions.length === 0) {
+                language.setCustomValidity(
+                    "Выберите хотя бы один язык программирования."
+                );
+
+                language.reportValidity();
+                language.focus();
+                return;
+            }
+
+            // Проверка всех обязательных полей
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            // Все проверки пройдены
+            successMessage.hidden = false;
+        });
+    </script>
+
+</body>
+</html>
+

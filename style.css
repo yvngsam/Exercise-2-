@@ -1,0 +1,325 @@
+
+/* Основные настройки */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #222;
+    line-height: 1.5;
+}
+
+/* Шапка сайта */
+
+header {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Левая часть шапки */
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Логотип */
+
+.logo {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    border: 1px solid white;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Название сайта */
+
+.site-name {
+    font-size: 20px;
+    font-weight: normal;
+}
+
+/* Навигация */
+
+nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus {
+    text-decoration: underline;
+}
+
+/* Основное содержимое */
+
+main {
+    width: 100%;
+    max-width: 960px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Разделы */
+
+section {
+    margin-bottom: 40px;
+    scroll-margin-top: 20px;
+}
+
+h2 {
+    margin: 0 0 20px;
+    font-size: 20px;
+}
+
+/* Таблица */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: black;
+    color: white;
+}
+
+/* Список гиперссылок */
+
+#links ul {
+    padding-left: 25px;
+}
+
+#links li {
+    margin-bottom: 8px;
+}
+
+#links a {
+    color: #174ea6;
+    overflow-wrap: anywhere;
+}
+
+#links a:hover,
+#links a:focus {
+    text-decoration: none;
+}
+
+/* Форма */
+
+form {
+    max-width: 600px;
+}
+
+form p {
+    margin: 0 0 20px;
+}
+
+form p > label {
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+/* Поля ввода */
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 5px;
+    padding: 9px;
+    font: inherit;
+    border: 1px solid #888;
+    border-radius: 4px;
+    background-color: white;
+    color: #222;
+}
+
+select[multiple] {
+    min-height: 130px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Фокус полей */
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #555;
+    outline-offset: 2px;
+}
+
+/* Ошибки валидации */
+
+input[aria-invalid="true"] {
+    border-color: #c62828;
+}
+
+.field-error {
+    display: block;
+    margin-top: 5px;
+    color: #c62828;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Радиокнопки и согласие */
+
+fieldset {
+    margin: 0 0 20px;
+    padding: 12px;
+    border: 1px solid #888;
+    border-radius: 4px;
+}
+
+legend {
+    padding: 0 5px;
+}
+
+fieldset label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+fieldset input[type="radio"] {
+    margin: 0;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* Кнопка */
+
+input[type="submit"] {
+    padding: 10px 22px;
+    border: none;
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+    font: inherit;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #333;
+}
+
+input[type="submit"]:focus {
+    outline: 2px solid #555;
+    outline-offset: 3px;
+}
+
+/* Сообщение об успехе */
+
+#success-message {
+    margin-top: 15px;
+    color: green;
+    font-weight: bold;
+}
+
+/* Подвал */
+
+footer {
+    width: 100%;
+    min-height: 60px;
+    padding: 15px 20px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+/* Адаптация под мобильные устройства */
+
+@media (max-width: 600px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .header-content {
+        width: 100%;
+        justify-content: center;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: center;
+        gap: 10px 18px;
+    }
+
+    main {
+        margin: 20px auto;
+        padding: 0 12px;
+    }
+
+    section {
+        margin-bottom: 30px;
+    }
+
+    #table {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 520px;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+    }
+}
